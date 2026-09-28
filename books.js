@@ -1,0 +1,87 @@
+// Books Collection Data
+const books = [
+  {
+    id: 1,
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    genre: "Fiction / Fantasy",
+    year: 2020,
+    rating: "4.8 / 5",
+    pages: 304,
+    isbn: "978-0525559474",
+    price: "$18.99",
+    cover: "assets/images/midnight-library.jpg",
+    description: "Between life and death there is a library where each book gives you the chance to experience another life you could have lived.",
+    synopsis: "Somewhere out beyond the edge of the universe there is a library that contains an infinite number of books, each one the story of another reality. One tells the story of your life as it is, along with another book for the other life you could have lived if you had made a different choice at any point in your life. In The Midnight Library, Nora Seed is faced with the possibility of changing her life for a new one, realizing her dreams and discovering what truly makes life worth living."
+  },
+  {
+    id: 2,
+    title: "Dune",
+    author: "Frank Herbert",
+    genre: "Science Fiction",
+    year: 1965,
+    rating: "4.9 / 5",
+    pages: 688,
+    isbn: "978-0441172719",
+    price: "$24.99",
+    cover: "assets/images/dune.jpg",
+    description: "Set on the desert planet Arrakis, Dune is the epic tale of Paul Atreides and the battle for the universe's most coveted substance, spice.",
+    synopsis: "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the 'spice' melange, a drug capable of extending life and enhancing consciousness. When House Atreides is betrayed, Paul embarks on a journey toward an unimaginable destiny, bringing to fruition humankind's ancient dream."
+  },
+  {
+    id: 3,
+    title: "Atomic Habits",
+    author: "James Clear",
+    genre: "Self-Help / Productivity",
+    year: 2018,
+    rating: "4.9 / 5",
+    pages: 320,
+    isbn: "978-0735211292",
+    price: "$21.50",
+    cover: "assets/images/atomic-habits.jpg",
+    description: "A proven, practical framework for improving every day by mastering tiny behaviors and breaking bad habits.",
+    synopsis: "Atomic Habits offers a proven framework for improving every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results. If you're having trouble changing your habits, the problem isn't you—the problem is your system. You do not rise to the level of your goals; you fall to the level of your systems."
+  },
+  {
+    id: 4,
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    genre: "Psychological Thriller",
+    year: 2019,
+    rating: "4.7 / 5",
+    pages: 336,
+    isbn: "978-1250301696",
+    price: "$17.95",
+    cover: "assets/images/silent-patient.jpg",
+    description: "Alicia Berenson seemingly had the perfect life—until one evening she shoots her husband five times and never speaks again.",
+    synopsis: "Alicia Berenson's life is seemingly perfect. A famous painter married to an in-demand fashion photographer, she lives in a grand house overlooking a park in London. One evening, Alicia shoots her husband five times in the face, and then never speaks another word. Theo Faber is a criminal psychotherapist who has waited a long time for the opportunity to work with Alicia and unravel the mystery of why she shot her husband."
+  },
+  {
+    id: 5,
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    genre: "Science Fiction",
+    year: 2021,
+    rating: "4.9 / 5",
+    pages: 496,
+    isbn: "978-0593135204",
+    price: "$22.00",
+    cover: "assets/images/project-hail-mary.jpg",
+    description: "A lone astronaut awakens with amnesia on a desperate interstellar mission to save humanity from extinction.",
+    synopsis: "Ryland Grace is the sole survivor on a desperate, last-chance mission—and if he fails, humanity and the earth itself will perish. Except that right now, he doesn't know that. He can't even remember his own name, let alone the nature of his assignment. Hurtling through space on this tiny ship, he must solve an extinction-level scientific mystery and conquer an existential threat to our species with the help of an unexpected ally."
+  },
+  {
+    id: 6,
+    title: "Sapiens: A Brief History of Humankind",
+    author: "Yuval Noah Harari",
+    genre: "History / Non-Fiction",
+    year: 2014,
+    rating: "4.8 / 5",
+    pages: 464,
+    isbn: "978-0062316097",
+    price: "$25.00",
+    cover: "assets/images/sapiens.jpg",
+    description: "A bold, fascinating exploration of how Homo sapiens came to dominate the planet from the Stone Age to the modern era.",
+    synopsis: "One hundred thousand years ago, at least six different species of humans inhabited Earth. Yet today there is only one—Homo sapiens. How did our species succeed in the battle for dominance? Why did our foraging ancestors come together to create cities and kingdoms? How did we come to believe in gods, nations, and human rights? Sapiens integrates history and science to explore who we are, how we got here, and where we might be going."
+  }
+];

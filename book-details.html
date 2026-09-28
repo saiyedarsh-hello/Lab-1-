@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details | Book Information Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        📖 <span>Book</span>Portal
+      </a>
+      <nav>
+        <a href="index.html" style="color: #2563eb; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+          All Books
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+      &larr; Back to Books List
+    </a>
+
+    <!-- Detail Box -->
+    <div id="detailsContainer">
+      <!-- Book details dynamically rendered here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Book Information Portal. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="books.js"></script>
+  <script>
+    // 1. Get the book ID from URL query parameters (e.g. ?id=1)
+    const params = new URLSearchParams(window.location.search);
+    const bookId = parseInt(params.get('id'), 10);
+
+    // 2. Find matching book
+    const book = books.find(b => b.id === bookId);
+    const container = document.getElementById('detailsContainer');
+
+    if (book) {
+      document.title = `${book.title} - Book Details`;
+      container.innerHTML = `
+        <div class="details-wrapper">
+          <div class="details-cover">
+            <img src="${book.cover}" alt="${book.title} Cover">
+          </div>
+          <div class="details-content">
+            <span class="card-genre">${book.genre}</span>
+            <h1>${book.title}</h1>
+            <div class="details-author">by <strong>${book.author}</strong></div>
+
+            <table class="info-table">
+              <tr>
+                <th>Author:</th>
+                <td>${book.author}</td>
+              </tr>
+              <tr>
+                <th>Genre:</th>
+                <td>${book.genre}</td>
+              </tr>
+              <tr>
+                <th>Published Year:</th>
+                <td>${book.year}</td>
+              </tr>
+              <tr>
+                <th>Pages:</th>
+                <td>${book.pages} pages</td>
+              </tr>
+              <tr>
+                <th>ISBN-13:</th>
+                <td>${book.isbn}</td>
+              </tr>
+              <tr>
+                <th>Rating:</th>
+                <td><strong style="color: #d97706;">★ ${book.rating}</strong></td>
+              </tr>
+              <tr>
+                <th>Price:</th>
+                <td><strong style="color: #16a34a;">${book.price}</strong></td>
+              </tr>
+            </table>
+
+            <div class="synopsis-section">
+              <h3>About this Book</h3>
+              <p>${book.synopsis}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      // If no valid book found
+      container.innerHTML = `
+        <div style="background: white; padding: 40px; border-radius: 12px; text-align: center; border: 1px solid #e2e8f0;">
+          <h2>Book Not Found</h2>
+          <p style="color: #64748b; margin: 15px 0;">The requested book information could not be found.</p>
+          <a href="index.html" class="btn-details">Return to Home Page</a>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>

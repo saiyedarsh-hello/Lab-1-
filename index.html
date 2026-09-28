@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Information Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        📖 <span>Book</span>Portal
+      </a>
+      <nav>
+        <span style="color: #64748b; font-size: 0.9rem;">Library Catalog</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="intro">
+      <h1>Featured Books Collection</h1>
+      <p>Browse through our collection. Click on any book to see its full details.</p>
+    </section>
+
+    <!-- Search Input -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by title, author, or genre...">
+    </div>
+
+    <!-- Books List Grid -->
+    <div class="books-grid" id="booksContainer">
+      <!-- Book cards dynamically inserted here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Book Information Portal. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="books.js"></script>
+  <script>
+    const container = document.getElementById('booksContainer');
+    const searchInput = document.getElementById('searchInput');
+
+    // Function to render books
+    function displayBooks(booksList) {
+      if (booksList.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #64748b;">
+            <p>No books found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = booksList.map(book => `
+        <div class="book-card">
+          <div class="card-img-wrap">
+            <img src="${book.cover}" alt="${book.title} Cover">
+          </div>
+          <div class="card-body">
+            <span class="card-genre">${book.genre}</span>
+            <h2 class="card-title">${book.title}</h2>
+            <div class="card-author">by ${book.author}</div>
+            <p class="card-desc">${book.description}</p>
+            <div class="card-footer">
+              <span class="card-rating">★ ${book.rating}</span>
+              <a href="book-details.html?id=${book.id}" class="btn-details">View Details</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Initial render
+    displayBooks(books);
+
+    // Live search filter
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      const filtered = books.filter(b => 
+        b.title.toLowerCase().includes(term) ||
+        b.author.toLowerCase().includes(term) ||
+        b.genre.toLowerCase().includes(term)
+      );
+      displayBooks(filtered);
+    });
+  </script>
+
+</body>
+</html>
